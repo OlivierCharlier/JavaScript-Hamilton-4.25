@@ -10,5 +10,27 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    
+
+    document.querySelector("#run").addEventListener("click", () => {
+        window.lib.getPosts().then ((posts) => {
+            let i = 0
+            posts.forEach(item => {
+                window.lib.getComments(item.id).then((result) => {
+                    console.table(result);
+                  })
+                 /* .catch((error) => {
+                    console.error(error);
+                  })*/
+                  if (++i === posts.length) {
+                    console.log(item);
+                  }
+                     
+                });
+             });
+        });
+
+    
+
 })();

@@ -10,5 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    
+    function callBack(error, peopleArray) {
+        if (error) {
+          console.error(error); // en mettant error tel quel, il va chercher le texte qui se trouve dans error, défini dans le script de l'exercice. J'aurais pu noter "Error!" qui aurait afficher Error!
+        } else {
+              console.log(peopleArray);
+        }
+      }
+
+      document.getElementById("run").addEventListener("click", function () {
+        window.lib.getPersons(callBack);
+      });
+
+
+
+
+
 })();
