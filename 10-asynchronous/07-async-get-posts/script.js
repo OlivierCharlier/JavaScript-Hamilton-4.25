@@ -11,9 +11,9 @@
 
 (() => {
 
-  const posts = window.lib.getPosts();
+  
     document.querySelector("#run").addEventListener("click", async() => {
-
+      const posts = window.lib.getPosts();
      try {
         const result = await posts;
         console.table(result);
